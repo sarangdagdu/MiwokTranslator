@@ -4,6 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,7 +21,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
         englishWordsList = new ArrayList<String>();
-        
+
         englishWordsList.add("one");
         englishWordsList.add("two");
         englishWordsList.add("three");
@@ -28,8 +33,11 @@ public class NumbersActivity extends AppCompatActivity {
         englishWordsList.add("nine");
         englishWordsList.add("ten");
 
-        for (int i = 0; i < englishWordsList.size(); i++) {
-            Log.v("NumbersActivity", "Word at index " + i + ": " + englishWordsList.get(i));
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, englishWordsList);
+
+        ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(itemsAdapter);
+
         }
     }
-}
