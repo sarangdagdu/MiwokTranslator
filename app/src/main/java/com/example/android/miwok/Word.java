@@ -1,6 +1,15 @@
 package com.example.android.miwok;
 
+/**
+ * Represents the single word.
+ * This class holds both default and miwok words.
+ */
 public class Word {
+
+    public Word(String mDefaultTranslation, String mMiwokTranslation) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+    }
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
