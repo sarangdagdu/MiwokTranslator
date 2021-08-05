@@ -11,8 +11,28 @@ public class Word {
         this.mMiwokTranslation = mMiwokTranslation;
     }
 
+    /**
+     * Parametrized Constructor to hold the translation along with the image resource id
+     * needed in the activities.
+     * @param mDefaultTranslation English Word
+     * @param mMiwokTranslation Miwok Translation
+     * @param mImageResourceId Resource Id of the image corresponding to the translation.
+     */
+    public Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mImageResourceId = mImageResourceId;
+    }
+
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceId;
+    private static final int NO_IMAGE_PROVIDED = 1;
+
+
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
 
     public String getmDefaultTranslation() {
         return mDefaultTranslation;
@@ -28,5 +48,13 @@ public class Word {
 
     public void setmMiwokTranslation(String mMiwokTranslation) {
         this.mMiwokTranslation = mMiwokTranslation;
+    }
+
+    /**
+     * Check if there is an image for the word.
+     * @return boolean value
+     */
+    public boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }

@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(getApplicationContext(), FamilyActivity.class);
         startActivity(intent);
         Toast.makeText(this,"Opened Family Members Activity",Toast.LENGTH_LONG).show();
-
     }
 
     private void tapPhrasesTextView() {
