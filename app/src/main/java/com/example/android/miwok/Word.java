@@ -26,8 +26,9 @@ public class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
-    private int mImageResourceId;
-    private static final int NO_IMAGE_PROVIDED = 1;
+    private static final int NO_IMAGE_PROVIDED = -1;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
 
 
     public int getmImageResourceId() {
